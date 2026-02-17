@@ -82,7 +82,7 @@ export function whisperChaiOrder(order) {
 }
 
 export function hasSpecialIngredient(order, ingredient) {
-  if (order !== "string" || ingredient !== "string") {
+  if (typeof order !== "string" || typeof ingredient !== "string") {
     return false;
   }
 
@@ -95,8 +95,8 @@ export function hasSpecialIngredient(order, ingredient) {
 export function getFirstAndLastChar(order) {
   let trimedOrder = order.trim();
 
-  if (order !== "string" || order == "") {
-    // return null
+  if (typeof trimedOrder !== "string" || trimedOrder == "") {
+    return null
   } else {
   }
   return {first: trimedOrder.charAt(0), last: trimedOrder.at(-1)}
@@ -104,5 +104,5 @@ export function getFirstAndLastChar(order) {
 
 console.log(getChaiOrderLength("    Aarav Ahuja    "))
 console.log(shoutChaiOrder("   Masala Chai    "))
-console.log(hasSpecialIngredient("20", 20))
+console.log(hasSpecialIngredient("20", "10"))
 console.log(getFirstAndLastChar("masala chai"))
