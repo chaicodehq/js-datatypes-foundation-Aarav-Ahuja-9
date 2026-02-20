@@ -93,12 +93,16 @@ export function hasSpecialIngredient(order, ingredient) {
 }
 
 export function getFirstAndLastChar(order) {
+  if (typeof order !== "string") {
+    return null
+  }
+
   let trimedOrder = order.trim();
 
-  if (typeof trimedOrder !== "string" || trimedOrder == "") {
+  if (trimedOrder == "") {
     return null
-  } else {
-  }
+  } 
+
   return {first: trimedOrder.charAt(0), last: trimedOrder.at(-1)}
 }
 
