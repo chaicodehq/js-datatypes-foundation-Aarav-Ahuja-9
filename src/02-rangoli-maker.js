@@ -46,7 +46,7 @@
  *   splitAndJoinRangoli("red,blue", ",", "-")  // => "red-blue"
  */
 export function repeatPattern(pattern, times) {
-  if (typeof pattern !== "string" || !Number.isInteger(times)) return ""
+  if (typeof pattern !== "string" || !Number.isInteger(times) || times <= 0) return ""
 
 
   return pattern.repeat(times)
